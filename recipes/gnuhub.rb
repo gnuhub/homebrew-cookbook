@@ -16,3 +16,15 @@ script "install_PHP_CodeSniffer" do
   brew link php54
   EOH
 end
+
+script "install_PHP_CodeSniffer" do
+  interpreter "zsh"
+  cwd "/tmp"
+  code <<-EOH
+  if [ ! -f /usr/local/bin/phpab ];then
+  	wget http://download.sf.net/gnuhub/phpab-1.16.1.phar
+  	mv phpab-1.16.1.phar /usr/local/bin/phpab
+  	chmod +x  /usr/local/bin/phpab
+  fi
+  EOH
+end
