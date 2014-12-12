@@ -62,6 +62,7 @@ gems = [
 
 gems.each do |gem_name| 
   gem_package gem_name do
+    gem_binary(Dir.home + "/.rbenv/shims/gem")
     action :install 
   end
 end
