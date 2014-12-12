@@ -66,3 +66,13 @@ gems.each do |gem_name|
     action :install 
   end
 end
+
+script "install_python_packages" do
+  interpreter "zsh"
+  cwd "/tmp"
+  code <<-EOH
+  if [ ! -f /usr/local/bin/phpab ];then
+  	pip install Pygments
+  fi
+  EOH
+end
