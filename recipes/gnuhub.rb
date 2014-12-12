@@ -28,3 +28,40 @@ script "install_PHP_CodeSniffer" do
   fi
   EOH
 end
+
+# 安装 gem
+gems = [
+  "bundler",
+  "rest-client",
+  "json",
+  "xml-simple",
+  "byebug",
+  "pry",
+  "pry-doc",
+  "jenkins",
+  # for kaipan api
+  "ruby-hmac",
+   #nanoc
+  "nanoc",
+  "adsf",
+  "kramdown",
+  "nokogiri",
+  #mediawiki api
+  "mediawiki-gateway",
+  "rugged",
+  "patron",
+  "elasticsearch",
+  # mediawiki-gateway: For better Unicode support, install the `unicode' or `activesupport' gem
+  "unicode",
+  "activesupport",
+  "selenium-webdriver",
+  "rickshaw",
+  "cucumber",
+  "aruba"
+]
+
+gems.each do |gem_name| 
+  gem_package gem_name do
+    action :install 
+  end
+end
